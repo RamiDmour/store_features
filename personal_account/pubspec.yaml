@@ -1,10 +1,10 @@
-name: onboarding
+name: personal_account
 description: A new Flutter package project.
 version: 0.0.1
-homepage: https://github.com/RamiDmour/store_features
-publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/onboarding/
+homepage:
+
 environment:
-  sdk: ">=3.1.5 <4.0.0"
+  sdk: '>=3.1.5 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
