@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  store_core:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.2
 
 dev_dependencies:
   flutter_test:

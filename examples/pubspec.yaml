@@ -1,0 +1,25 @@
+name: examples
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  onboarding:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.1
+  store_core:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
