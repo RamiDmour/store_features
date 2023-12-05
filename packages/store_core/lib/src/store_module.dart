@@ -1,6 +1,6 @@
 import 'package:store_core/store_core.dart';
 
-abstract interface class StoreModule {
+abstract class StoreModule {
   List<GoRoute> getRoutes();
 
   List<CollectionSchema> getIsarCollections();

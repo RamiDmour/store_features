@@ -9,7 +9,7 @@ export 'package:store_core/src/store_module.dart';
 
 class StoreCore {
   late final GoRouter router;
-  late final Isar isar;
+  late final Isar? isar;
 
   StoreCore._({
     required this.router,
@@ -29,7 +29,8 @@ class StoreCore {
         ...module.getIsarCollections(),
       ],
     ).toList();
-    final isar = await Isar.open(schemas, directory: directory);
+    final isar =
+        schemas.isEmpty ? null : await Isar.open(schemas, directory: directory);
 
     final routes = modules.fold<List<GoRoute>>(
       [],
