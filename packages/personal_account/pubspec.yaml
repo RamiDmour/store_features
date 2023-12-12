@@ -1,6 +1,6 @@
 name: personal_account
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/RamiDmour/store_features
 publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
 
@@ -13,8 +13,10 @@ dependencies:
     sdk: flutter
   store_core:
     hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.5
+  onboarding:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
     version: 0.0.2
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

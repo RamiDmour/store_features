@@ -1,8 +1,8 @@
 name: onboarding
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/RamiDmour/store_features
-publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/onboarding/
+publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
 environment:
   sdk: ">=3.1.5 <4.0.0"
   flutter: ">=1.17.0"
@@ -10,6 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^2.1.1
+  personal_account:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.2
   store_core:
     hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
     version: 0.0.5
@@ -18,5 +22,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  isar_generator: ^3.1.0+1
+  build_runner: ^2.4.7
 
 flutter:

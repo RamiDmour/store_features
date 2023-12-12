@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: store_core
+dependency_overrides:
+  store_core:
+    path: ../store_core

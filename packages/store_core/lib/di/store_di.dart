@@ -5,7 +5,7 @@ final storeDI = GetIt.instance;
 
 Future<void> initDI({
   List<StoreModule> modules = const [],
-  required GoRouter Function(List<GoRoute> routes) routerBuilder,
+  required GoRouter Function(List<RouteBase> routes) routerBuilder,
 }) async {
   final core = await StoreCore.create(
     modules: modules,

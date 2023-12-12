@@ -1,6 +1,6 @@
 name: store_core
 description: A new Flutter package project.
-version: 0.0.5
+version: 0.0.14
 homepage: https://github.com/RamiDmour/store_features
 publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
 
@@ -17,7 +17,7 @@ dependencies:
   isar_flutter_libs: ^3.1.0+1
   path_provider: ^2.1.1
   get_it: ^7.6.4
-
+  flutter_screenutil: ^5.9.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

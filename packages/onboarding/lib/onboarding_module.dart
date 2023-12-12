@@ -1,8 +1,13 @@
 library onboarding;
 
+import 'package:flutter/material.dart';
+import 'package:onboarding/features/onboarding/data/local_datasource/models/test.dart';
 import 'package:onboarding/features/onboarding/presentation/screens/onboarding_tab_screen.dart';
 import 'package:onboarding/features/onboarding/presentation/screens/onboarding_webview_screen.dart';
+import 'package:onboarding/onboarding_routes.dart';
 import 'package:store_core/store_core.dart';
+
+export 'package:onboarding/features/onboarding/domain/use_cases/get_tests_use_case.dart';
 
 enum OnboardingScreenType {
   tab,
@@ -14,15 +19,20 @@ class OnboardingModule extends StoreModule {
 
   OnboardingModule({required this.screenType});
   @override
-  List<CollectionSchema> getIsarCollections() => [];
+  List<CollectionSchema> getIsarCollections() => [TestSchema];
+
+  @override
+  List<StatefulShellBranch> getShellBranches() => [];
 
   @override
   List<GoRoute> getRoutes() => [
         GoRoute(
-          path: '/onboarding',
-          builder: (context, state) => screenType == OnboardingScreenType.tab
-              ? const OnbardingTabScreen()
-              : const OnboardingWebviewScreen(),
+          path: OnboardingRoutes.onboarding,
+          pageBuilder: (_, __) => MaterialPage(
+            child: screenType == OnboardingScreenType.tab
+                ? const OnbardingTabScreen()
+                : const OnboardingWebviewScreen(),
+          ),
         )
       ];
 }
