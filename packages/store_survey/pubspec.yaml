@@ -1,0 +1,22 @@
+name: store_survey
+description: A new Flutter package project.
+version: 0.0.1
+homepage: https://github.com/RamiDmour/store_features
+
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  store_core:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.20
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:

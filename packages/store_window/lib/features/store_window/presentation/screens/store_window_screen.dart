@@ -1,12 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:store_core/store_core.dart';
-import 'package:store_window/features/shop_window/presentation/widgets/store_banner.dart';
-import 'package:store_window/features/shop_window/presentation/widgets/store_story.dart';
+import 'package:store_window/features/store_story/presentation/bloc/store_story_cubit.dart';
+import 'package:store_window/features/store_story/presentation/bloc/store_story_state.dart';
+import 'package:store_window/features/store_story/presentation/widgets/store_story_list.dart';
+import 'package:store_window/features/store_window/presentation/widgets/store_banner.dart';
+import 'package:store_window/features/store_story/presentation/widgets/store_story.dart';
 import 'package:store_window/gen/assets.gen.dart';
 
 class StoreWindowScreen extends StatelessWidget {
   const StoreWindowScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) =>
+          StoreStoryCubit(getStoriesUseCase: storeDI())..fetchStories(),
+      child: const StoreWindowView(),
+    );
+  }
+}
+
+class StoreWindowView extends StatelessWidget {
+  const StoreWindowView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,20 +75,15 @@ class StoreWindowScreen extends StatelessWidget {
                     // STORIES
                     SizedBox(
                       height: 144.h,
-                      child: ListView.builder(
-                        itemBuilder: (_, __) => Padding(
-                          padding: EdgeInsets.only(right: 8.w),
-                          child: StoreStory(
-                            onTap: () {},
-                            imageUrl:
-                                "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
-                            text: "Название истории баннера",
-                          ),
+                      child: BlocBuilder<StoreStoryCubit, StoreStoryState>(
+                        builder:
+                            (BuildContext context, StoreStoryState state) =>
+                                StoreStoryList(
+                          stories:
+                              state is StoreStoryReady ? state.stories : null,
+                          onStoryTap: (story) {},
+                          isLoading: state is StoreStoryLoading,
                         ),
-                        itemCount: 10,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        primary: false,
                       ),
                     ),
                     // STORIES
@@ -233,51 +244,51 @@ class StoreWindowScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: StoreBanner(
-                            onTap: () {},
-                            text: "Бакалея",
-                            image: Image.asset(""),
-                            textStyle: TextStyle(
-                              color: const Color(0xFFA2489F),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
-                            ),
-                            color: const Color(0xFFFFE0FE),
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Expanded(
-                          child: StoreBanner(
-                            onTap: () {},
-                            text: "Автотовары",
-                            image: Image.asset(""),
-                            textStyle: TextStyle(
-                              color: const Color(0xFF7B7225),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
-                            ),
-                            color: const Color(0xFFF9F4C8),
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Expanded(
-                          child: StoreBanner(
-                            onTap: () {},
-                            text: "Спорт",
-                            image: Image.asset(""),
-                            textStyle: TextStyle(
-                              color: const Color(0xFF308070),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
-                            ),
-                            color: const Color(0xFFC7F7EE),
-                          ),
-                        )
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(
+                    //       child: StoreBanner(
+                    //         onTap: () {},
+                    //         text: "Бакалея",
+                    //         image: Image.asset(""),
+                    //         textStyle: TextStyle(
+                    //           color: const Color(0xFFA2489F),
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 13.sp,
+                    //         ),
+                    //         color: const Color(0xFFFFE0FE),
+                    //       ),
+                    //     ),
+                    //     SizedBox(width: 8.w),
+                    //     Expanded(
+                    //       child: StoreBanner(
+                    //         onTap: () {},
+                    //         text: "Автотовары",
+                    //         image: Image.asset(""),
+                    //         textStyle: TextStyle(
+                    //           color: const Color(0xFF7B7225),
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 13.sp,
+                    //         ),
+                    //         color: const Color(0xFFF9F4C8),
+                    //       ),
+                    //     ),
+                    //     SizedBox(width: 8.w),
+                    //     Expanded(
+                    //       child: StoreBanner(
+                    //         onTap: () {},
+                    //         text: "Спорт",
+                    //         image: Image.asset(""),
+                    //         textStyle: TextStyle(
+                    //           color: const Color(0xFF308070),
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 13.sp,
+                    //         ),
+                    //         color: const Color(0xFFC7F7EE),
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                   ],
                 ),
               ),

@@ -1,4 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+flutter_secure_storage=/Users/ramidmour/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.0.0/
+flutter_secure_storage_linux=/Users/ramidmour/.pub-cache/hosted/pub.dev/flutter_secure_storage_linux-1.2.0/
+flutter_secure_storage_macos=/Users/ramidmour/.pub-cache/hosted/pub.dev/flutter_secure_storage_macos-3.0.1/
+flutter_secure_storage_web=/Users/ramidmour/.pub-cache/hosted/pub.dev/flutter_secure_storage_web-1.1.2/
+flutter_secure_storage_windows=/Users/ramidmour/.pub-cache/hosted/pub.dev/flutter_secure_storage_windows-3.0.0/
 isar_flutter_libs=/Users/ramidmour/.pub-cache/hosted/pub.dev/isar_flutter_libs-3.1.0+1/
 path_provider=/Users/ramidmour/.pub-cache/hosted/pub.dev/path_provider-2.1.1/
 path_provider_android=/Users/ramidmour/.pub-cache/hosted/pub.dev/path_provider_android-2.2.1/
