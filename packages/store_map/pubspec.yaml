@@ -1,0 +1,29 @@
+name: store_map
+description: A new Flutter plugin project.
+version: 0.0.1
+homepage: https://github.com/RamiDmour/store_features
+
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+  store_core:
+    hosted: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
+    version: 0.0.21
+  yandex_mapkit: ^3.3.3
+  intl: ^0.19.0
+  carousel_slider: ^4.2.1
+  fluttertoast: ^8.2.4
+  flash: ^3.0.5+2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  assets:
+    - assets/images/

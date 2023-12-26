@@ -1,6 +1,6 @@
 name: store_core
 description: A new Flutter package project.
-version: 0.0.20
+version: 0.0.21
 homepage: https://github.com/RamiDmour/store_features
 publish_to: https://dart.pkg.jetbrains.space/dartpubtest/p/main/storefeatures/
 

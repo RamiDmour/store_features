@@ -25,7 +25,7 @@ class StoreColors {
       200: Color(0xFFFFF899),
       300: Color(0xFFFFF566),
       400: Color(0xFFFFF133),
-      500: Color(0xFFFEEF00),
+      500: Color(0xFFFFD900),
       600: Color(0xFFCCBE00),
       700: Color(0xFF998F00),
       800: Color(0xFF665F00),
